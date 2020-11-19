@@ -1,0 +1,33 @@
+.row_posters {
+  display: flex;
+  overflow-y: hidden; /*if the scroll button is showing, hide it*/
+  overflow-x: scroll;
+  padding: 30px; /*So that hover animation can be seen*/
+}
+
+/*Telling all browsers to not display scrollbar but to keep the functionality*/
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row_poster {
+  /* keeps aspect ratio */
+  object-fit: contain;
+  width: 100%;
+  max-height: 160px;
+  margin-right: 10px;
+  transition: transform 300ms; /*Adds delay to hover*/
+}
+
+.row_poster:hover {
+  transform: scale(1.09);
+  box-shadow: 2px 2px 5px black;
+}
+
+.row_posterLarge {
+  max-height: 300px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.1);
+}

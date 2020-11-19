@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../axios'; 
+import './Row.css';
 
 const BASE_URL = "https://image.tmdb.org/t/p/w500/"; 
 
-function Row({ title, getUrl}) {
+function Row({ title, getUrl, isLargeRow}) {
 
     //How does react hooks work? 
     //t 
@@ -34,10 +35,14 @@ function Row({ title, getUrl}) {
         <div className="row">
             <h2>{title}</h2>
             <div className="row_posters">
-                    {/* Several row posters */}
-                    {movies.map((movie, id) => (
-                        <img className="row_poster" src={`${BASE_URL}${movie.poster_path}`} alt={movie.title}/>
-                    ))}
+                {/* Several row posters */}
+                {movies.map((movie) => (
+                    <img 
+                    key={movie.id}
+                    className={`row_poster ${isLargeRow && "row_posterLarge"}`} 
+                    src={`${BASE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.title}
+                    />
+                ))}
             </div>
         </div>
     )
