@@ -1,0 +1,31 @@
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  z-index: 1;
+
+  transition-timing-function: ease-in; /*Gives gradual fade*/
+  transition: all 0.5s; /*For all transitions in this class do this*/
+}
+
+.nav_black {
+  background-color: #111;
+}
+
+.nav_logo {
+  position: fixed;
+  left: 0;
+  width: 100px;
+  object-fit: contain; /*Preserves aspect ratio*/
+}
+
+.nav_avatar {
+  position: fixed;
+  right: 20px;
+  width: 40px;
+  object-fit: contain;
+}
